@@ -31,7 +31,7 @@ namespace Map
                 if (user.Username == username && user.Password == password)
                     return true;
             }
-            return false;//heto?) de es heriq er hl@ or :D 
+            return false; 
         }
     }
 }
