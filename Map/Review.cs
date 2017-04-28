@@ -9,10 +9,10 @@ namespace Map
     class Review
     {
         public Cafe Cafe { get; set; }
-        public Int16 Score { get; set; }
+        public byte Score { get; set; }
 
 
-        public Review(Cafe cafe ,Int16 score)
+        public Review(Cafe cafe, byte score)
         {
             Cafe = cafe;
             Score = score;

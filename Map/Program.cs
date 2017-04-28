@@ -9,6 +9,19 @@ namespace Map
     {
         static void Main(string[] args)
         {
+            bool FirstMenu = true;
+            while(FirstMenu)
+            {
+                Console.WriteLine("### Log In ###");
+                Console.Write("Username: ");
+                string username = Console.ReadLine();
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
+                if(User:check(username, password)) // TODO: Implement User::Check method
+                {
+                    FirstMenu = false;
+                }
+            }
         }
     }
 }
