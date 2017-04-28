@@ -13,16 +13,25 @@ namespace Map
         public string Website { get; set; }
         public string Description { get; set; }
         public string Phone { get; set; }
-        public WorkTime Work { get; set; }
-        public Address Location { get; set; }
+        public WorkTime Work;
+        public Address Location;
         public string PopularTime { get; set; }
-        public Cafe (string name)
+        public Cafe (string name, double latitude, double longtiude)
         {
             Name = name;
+            Location.Coords = new GeoCoordinate(latitude, longtiude);
+
         }
         public List<Cafe> Nearby()
         {
-
+            List<Cafe> nearbies = new List<Cafe>();
+            foreach(Cafe cafe in Cafes)
+            {
+                if (this.Location.Coords.GetDistanceTo(cafe.Location.Coords) <= 1000 &&
+                    this.Name != cafe.Name)
+                    nearbies.Add(cafe);
+            }
+            return nearbies;
         }
         public struct WorkTime
         {
@@ -31,10 +40,10 @@ namespace Map
         }
         public struct Address
         {
-            string City;
-            string Street;
-            string Building;
-            GeoCoordinate Coords;// = new GeoCoordinate(sLatitude, sLongitude);
+            public string City;
+            public string Street;
+            public string Building;
+            public GeoCoordinate Coords;
         }
         
     }
