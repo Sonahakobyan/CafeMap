@@ -9,5 +9,10 @@ namespace Map
     {
         public string Name { get; set; }
         private List<Cafe> cafes;
+
+        public void WriteReview(Review review)
+        {
+            review.Cafe.Reviews.Add(review);
+        }
     }
 }

@@ -8,14 +8,16 @@ namespace Map
 {
     class Cafe
     {
-        static List<Cafe> Cafes = new List<Cafe>();
         public string Name { get; set; }
         public string Website { get; set; }
         public string Description { get; set; }
         public string Phone { get; set; }
+        static List<Cafe> Cafes = new List<Cafe>();
         public WorkTime Work;
         public Address Location;
-        public string PopularTime { get; set; }
+        // public string PopularTime { get; set; }
+        public List<Review> Reviews;
+
         public Cafe (string name, double latitude, double longtiude)
         {
             Name = name;
