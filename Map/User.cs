@@ -9,7 +9,7 @@ namespace Map
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        private List<Cafe> cafes;
+        private List<Cafe> favCafes;
         private static List<User> users = new List<User>();
 
         public User (string username,string password)
@@ -19,10 +19,7 @@ namespace Map
             users.Add(this);
         }
 
-        public void WriteReview(Review review)
-        {
-            review.Cafe.Reviews.Add(review);
-        }
+        //functions
 
         public static bool Check(string username,string password)
         {
@@ -33,5 +30,16 @@ namespace Map
             }
             return false; 
         }
+
+        public void AddCafe(Cafe cafe)
+        {
+            favCafes.Add(cafe);
+        }
+
+        public List<Cafe> GetSavedCafes()
+        {
+            return favCafes;
+        }
+        
     }
 }

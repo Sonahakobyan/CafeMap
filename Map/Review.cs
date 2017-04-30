@@ -10,12 +10,14 @@ namespace Map
     {
         public Cafe Cafe { get; set; }
         public byte Score { get; set; }
+        public string Description { get; set; }
 
 
-        public Review(Cafe cafe, byte score)
+        public Review(Cafe cafe, byte score,string description = null)
         {
             Cafe = cafe;
             Score = score;
+            Description = description;
         }
     }
 }

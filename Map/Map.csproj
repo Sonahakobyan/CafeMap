@@ -57,7 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building.cs" />
     <Compile Include="Cafe.cs" />
+    <Compile Include="IHasLocation.cs" />
+    <Compile Include="IHasPopularTime.cs" />
+    <Compile Include="IHasReview.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
