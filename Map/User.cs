@@ -7,38 +7,43 @@ namespace Map
 {
     class User
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        private List<Cafe> favCafes;
-        private static List<User> users = new List<User>();
+        public string FirstName { get; }
+        public string LastName { get; }
+        public List<Cafe> Buildings;
 
-        public User (string username,string password)
+        public User()
         {
-            Username = username;
-            Password = password;
-            users.Add(this);
+            
+        }
+
+
+        public User (string firstname,string lastname)
+        {
+            FirstName = firstname;
+            LastName = lastname;
+            Buildings = new List<Cafe>();
         }
 
         //functions
 
-        public static bool Check(string username,string password)
+        public static User Check(List<User> users, string firstname,string lastname)
         {
             foreach(User user in users)
             {
-                if (user.Username == username && user.Password == password)
-                    return true;
+                if (user.FirstName == firstname && user.LastName == lastname)
+                    return user;
             }
-            return false; 
+            return null; 
         }
 
-        public void AddCafe(Cafe cafe)
+        public void AddBuilding(Cafe building)
         {
-            favCafes.Add(cafe);
+            Buildings.Add(building);
         }
 
         public List<Cafe> GetSavedCafes()
         {
-            return favCafes;
+            return Buildings;
         }
         
     }

@@ -10,7 +10,7 @@ namespace Map
     {
         string Name { get; } 
         GeoCoordinate Location { get; }
-        ArrayList GetNearbies(ArrayList list);
+        List<Cafe> GetNearbies(List<Cafe> list);
            
     }
 }

@@ -49,10 +49,10 @@ namespace Map
             return foundCafe;
         }
         */
-        public override ArrayList GetNearbies(ArrayList list)
+        public override List<Cafe> GetNearbies(List<Cafe> list)
         {
-            ArrayList nearbies =  new ArrayList();
-            foreach(Building obj in list)
+            List<Cafe> nearbies = new List<Cafe>();
+            foreach(Cafe obj in list)
             {
                 if (Location.GetDistanceTo(obj.Location) <= 1000 &&
                     Name != obj.Name)

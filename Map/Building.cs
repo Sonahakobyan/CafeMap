@@ -16,7 +16,10 @@ namespace Map
         public string Website { get; }
         public string Description { get; }
         public string Phone { get; }
-        //TODO: worktime
+        public Address Address { get; }
+        public WorkingTime Time { get; }
+            
+        
 
         public Building(string name, string website, string description, string phone, double latitude,double longtiude)
         {
@@ -47,7 +50,7 @@ namespace Map
                 Reviews.Add(score-1);
         }
 
-        public abstract ArrayList GetNearbies(ArrayList list);
+        public abstract List<Cafe> GetNearbies(List<Cafe> list);
         
 
         public int[] GetReviews()
@@ -114,5 +117,21 @@ namespace Map
             int maxIndex = Array.IndexOf(orders, max);
             return (DayOfWeek)maxIndex;
         }
+
+        public override string ToString()
+        {
+            return String.Format("Name: {0}\r\nWebSite: {1}\r\nDescription: {2}\r\nPhone: {3}\r\n", Name, Website, Description, Phone);
+        }
+    }
+    public struct Address
+    {
+        public string City;
+        public string Street;
+    }
+
+    public struct WorkingTime
+    {
+        public string Open;
+        public string Close;
     }
 }
